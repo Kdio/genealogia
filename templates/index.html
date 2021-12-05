@@ -27,8 +27,8 @@ Pesquisa Genealógica
       <p class="pt-5"><strong>{{ message }}</strong></p>
 
       {% if results != [] %}
+        <p class="pt-5"><strong>{{ results|length }} resultado(s) encontrado(s)</strong></p>
         <table border="1">
-          <p class="pt-5"><strong>{{ results|length }} resultado(s) encontrado(s)</strong></p>
           <thead><tr><th>Ocorrências</th></tr></thead>
           <tbody>
             {% for r in results %}
