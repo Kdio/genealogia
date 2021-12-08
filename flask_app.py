@@ -20,7 +20,6 @@ Bootstrap(app)
 webs = {
     'www.genealogiabrasileira.com': 'http://relei.tec.br/websites/www.genealogiabrasileira.com',
     'www.genealogiahistoria.com.br': 'http://relei.tec.br/websites/www.genealogiahistoria.com.br',
-    'www.marcopolo.pro.br': 'http://relei.tec.br/websites/www.marcopolo.pro.br',
     'www.sfreinobreza.com': 'http://relei.tec.br/websites/www.sfreinobreza.com',
     'sites.google.com': 'http://relei.tec.br/websites/sites.google.com'
 }
