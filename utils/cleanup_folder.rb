@@ -1,3 +1,9 @@
+### bash
+# $>cd folder
+# $>IFS=$'\n'; set -f
+# $>for f in $(find * -name '*.htm' -or -name '*.html'); do iconv -f CP1252 -t UTF-8 "$f" -o "$f"; done
+# $>unset IFS; set +f
+
 require 'nokogiri'
 
 # Folder to cleanup from command line
@@ -6,15 +12,16 @@ folder = ARGV.join(' ')
 return if folder.empty? || !File.directory?(folder)
 
 def read_text_file(filename)
+  # puts filename
   Nokogiri::HTML.parse(
     remove_spaces(
-      File.read(filename, encoding: 'ISO-8859-1:UTF-8')
+      File.read(filename)
         .tr("\r\n", ' ')
         .gsub(/<[^>]*>/ui,'')
+        .gsub("\"","'")
         .gsub('&nbsp;', ' ')
     )
-  ).text.encode('UTF-8')
-
+  ).text
 end
 
 def remove_spaces(string)
