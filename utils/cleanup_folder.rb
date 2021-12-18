@@ -12,9 +12,10 @@ def read_text_file(filename)
         .tr("\r\n", ' ')
         .gsub(/<[^>]*>/ui,'')
         .gsub('&nbsp;', ' ')
-        .delete("^\u{0000}-\u{007F}")
+        # .delete("^\u{0000}-\u{007F}")
     )
-  ).text
+  ).text.encode('UTF-8')
+
 end
 
 def remove_spaces(string)
